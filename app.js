@@ -74,30 +74,55 @@ alert("Crop added successfully!")
 
 }
 
-  function loadCrops(){
+const crops = [
 
-db.collection("crops").get()
-.then((snapshot)=>{
+{
+name:"Tomato",
+price:30,
+quantity:50,
+image:"https://images.unsplash.com/photo-1582284540020-8acbe03f4924"
+},
 
-let productContainer=document.getElementById("products")
+{
+name:"Potato",
+price:20,
+quantity:100,
+image:"https://images.unsplash.com/photo-1518977676601-b53f82aba655"
+},
 
-productContainer.innerHTML=""
+{
+name:"Onion",
+price:25,
+quantity:80,
+image:"https://images.unsplash.com/photo-1615485290382-441e4d049cb5"
+},
 
-snapshot.forEach((doc)=>{
+{
+name:"Carrot",
+price:40,
+quantity:60,
+image:"https://images.unsplash.com/photo-1447175008436-054170c2e979"
+}
 
-let data=doc.data()
+]
 
-productContainer.innerHTML+=`
+function loadCrops(){
+
+let container=document.getElementById("products")
+
+crops.forEach(crop=>{
+
+container.innerHTML+=`
 
 <div class="product-card">
 
-<img src="${data.image}" width="200">
+<img src="${crop.image}">
 
-<h3>${data.crop}</h3>
+<h3>${crop.name}</h3>
 
-<p>Price: ₹${data.price} / kg</p>
+<p>Price: ₹${crop.price}/kg</p>
 
-<p>Quantity: ${data.quantity} kg</p>
+<p>Available: ${crop.quantity} kg</p>
 
 <button onclick="buyCrop()">Buy</button>
 
@@ -107,17 +132,12 @@ productContainer.innerHTML+=`
 
 })
 
-})
-
-}
-
-window.onload=loadCrops
-
 }
 
 function buyCrop(){
-
 alert("Order placed! Farmer will contact you.")
-
 }
+
+window.onload=loadCrops
+  
 
