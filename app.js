@@ -62,4 +62,43 @@ price:price
 
 alert("Crop Added")
 
+  function loadCrops(){
+
+db.collection("crops").get()
+.then((snapshot)=>{
+
+let productContainer=document.getElementById("products")
+
+productContainer.innerHTML=""
+
+snapshot.forEach((doc)=>{
+
+let data=doc.data()
+
+productContainer.innerHTML+=`
+
+<div class="product-card">
+
+<img src="${data.image}" width="200">
+
+<h3>${data.crop}</h3>
+
+<p>Price: ₹${data.price} / kg</p>
+
+<p>Quantity: ${data.quantity} kg</p>
+
+<button onclick="buyCrop()">Buy</button>
+
+</div>
+
+`
+
+})
+
+})
+
+}
+
+window.onload=loadCrops
+
 }
