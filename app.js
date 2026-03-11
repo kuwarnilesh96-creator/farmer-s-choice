@@ -54,13 +54,25 @@ function addCrop(){
 
 let crop=document.getElementById("crop").value
 let price=document.getElementById("price").value
+let quantity=document.getElementById("quantity").value
+let image=document.getElementById("image").value
 
 db.collection("crops").add({
+
 crop:crop,
-price:price
+price:price,
+quantity:quantity,
+image:image
+
 })
 
-alert("Crop Added")
+.then(()=>{
+
+alert("Crop added successfully!")
+
+})
+
+}
 
   function loadCrops(){
 
@@ -102,3 +114,4 @@ productContainer.innerHTML+=`
 window.onload=loadCrops
 
 }
+
