@@ -124,3 +124,67 @@ from{opacity:0;transform:translateY(30px)}
 to{opacity:1;transform:translateY(0)}
 
 }
+
+.form-container{
+
+width:350px;
+margin:100px auto;
+padding:30px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+animation:fadeIn 1.5s;
+
+}
+
+input,select{
+
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:8px;
+border:1px solid #ccc;
+
+}
+
+.dashboard{
+
+text-align:center;
+padding:80px;
+
+}
+
+.market{
+
+text-align:center;
+padding:80px;
+
+}
+
+.product-grid{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+
+}
+
+.product-card{
+
+background:white;
+padding:20px;
+width:220px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+}
+
