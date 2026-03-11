@@ -115,3 +115,9 @@ window.onload=loadCrops
 
 }
 
+function buyCrop(){
+
+alert("Order placed! Farmer will contact you.")
+
+}
+
