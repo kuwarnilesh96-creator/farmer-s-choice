@@ -188,3 +188,29 @@ transform:translateY(-10px);
 
 }
 
+.product-card{
+
+background:white;
+padding:20px;
+border-radius:15px;
+width:220px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+
+}
+
+.product-card img{
+
+border-radius:10px;
+margin-bottom:10px;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+
+}
+
