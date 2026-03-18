@@ -108,21 +108,28 @@ image:"https://images.unsplash.com/photo-1447175008436-054170c2e979"
 
 function loadCrops(){
 
-let container=document.getElementById("products")
+const container = document.getElementById("products")
 
-crops.forEach(crop=>{
+container.innerHTML = ""
 
-container.innerHTML+=`
+db.collection("crops").get()
+.then((snapshot)=>{
+
+snapshot.forEach((doc)=>{
+
+let data = doc.data()
+
+container.innerHTML += `
 
 <div class="product-card">
 
-<img src="${crop.image}">
+<img src="${data.image}" />
 
-<h3>${crop.name}</h3>
+<h3>${data.name}</h3>
 
-<p>Price: ₹${crop.price}/kg</p>
+<p>₹${data.price} / kg</p>
 
-<p>Available: ${crop.quantity} kg</p>
+<p>Available: ${data.quantity} kg</p>
 
 <button onclick="buyCrop()">Buy</button>
 
@@ -132,7 +139,15 @@ container.innerHTML+=`
 
 })
 
+})
+
+.catch(error=>{
+console.log(error)
+})
+
 }
+
+window.onload = loadCrops
 
 function buyCrop(){
 alert("Order placed! Farmer will contact you.")
