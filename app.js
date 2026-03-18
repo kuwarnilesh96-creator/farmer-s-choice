@@ -1,11 +1,12 @@
 const firebaseConfig = {
-apiKey: "YOUR_KEY",
-authDomain: "YOUR_DOMAIN",
-projectId: "YOUR_PROJECT_ID"
+apiKey: "PASTE FROM FIREBASE",
+authDomain: "PASTE FROM FIREBASE",
+projectId: "PASTE FROM FIREBASE"
 };
 
 firebase.initializeApp(firebaseConfig);
 
+const db = firebase.firestore();
 const auth = firebase.auth();
 const db = firebase.firestore();
 
